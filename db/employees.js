@@ -11,5 +11,18 @@ const employees = [
   { id: 10, name: "Gwen Grollmann" },
 ];
 
+export function getEmployeeById(id) {
+  return employees.find((person) => {
+    return person.id === Number(id);
+  });
+}
+
+export function addEmployee({ name }) {
+  const newEmployee = { id: employees.length + 1, name };
+  employees.push(newEmployee);
+
+  return newEmployee;
+}
+
 /* WARNING: this must remain the default export in order for the tests to work! */
 export default employees;
